@@ -1,0 +1,316 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    overflow-x:hidden;
+    background:black;
+    font-family:Arial,sans-serif;
+}
+
+.hero{
+
+    position:relative;
+    height:100vh;
+    overflow:hidden;
+
+    background:linear-gradient(
+    to bottom,
+    #47207f,
+    #bb4b8b,
+    #ff8b5f,
+    #ffd194);
+
+}
+
+/* Солнце */
+
+.sun{
+    position:absolute;
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    background:#ffe97f;
+    left:50%;
+    top:20%;
+    transform:translateX(-50%);
+    box-shadow:0 0 70px #fff7aa;
+    animation:sunset 20s infinite alternate linear;
+}
+
+@keyframes sunset{
+    from{
+        top:15%;
+    }
+    to{
+        top:60%;
+        background:#ff914d;
+        box-shadow:0 0 120px orange;
+    }
+}
+
+/* Облака */
+
+.cloud{
+    position:absolute;
+    width:180px;
+    height:60px;
+    background:white;
+    border-radius:50px;
+    opacity:.7;
+}
+
+.cloud::before,
+.cloud::after{
+    content:"";
+    position:absolute;
+    background:white;
+    border-radius:50%;
+}
+
+.cloud::before{
+    width:70px;
+    height:70px;
+    left:20px;
+    top:-30px;
+}
+
+.cloud::after{
+    width:90px;
+    height:90px;
+    right:15px;
+    top:-40px;
+}
+
+.cloud1{
+    top:18%;
+    animation:cloudMove 35s linear infinite;
+}
+
+.cloud2{
+    top:32%;
+    animation:cloudMove 50s linear infinite;
+    animation-delay:-10s;
+}
+
+@keyframes cloudMove{
+    from{
+        left:-250px;
+    }
+    to{
+        left:110%;
+    }
+}
+
+/* Море */
+
+.sea{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:28%;
+    background:linear-gradient(#2d6cdf,#183a74);
+    animation:wave 5s ease-in-out infinite;
+}
+
+@keyframes wave{
+
+    0%{
+        clip-path:polygon(
+        0 15%,10% 10%,20% 15%,30% 10%,40% 15%,50% 10%,60% 15%,70% 10%,80% 15%,90% 10%,100% 15%,100%100%,0 100%);
+    }
+
+    50%{
+        clip-path:polygon(
+        0 10%,10% 15%,20% 10%,30% 15%,40% 10%,50% 15%,60% 10%,70% 15%,80% 10%,90% 15%,100% 10%,100%100%,0 100%);
+    }
+
+    100%{
+        clip-path:polygon(
+        0 15%,10% 10%,20% 15%,30% 10%,40% 15%,50% 10%,60% 15%,70% 10%,80% 15%,90% 10%,100% 15%,100%100%,0 100%);
+    }
+}
+
+/* Заголовок */
+.content{
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%, -50%);
+
+    width:100%;
+
+    text-align:center;
+
+    color:white;
+
+    transition:transform .2s linear, opacity .2s linear;
+}
+
+.content h1{
+
+    font-size:80px;
+
+    font-family:'gabriola',serif;
+
+    color:white;
+
+    letter-spacing:6px;
+
+    font-weight:700;
+
+}
+
+.content h1{
+    font-size:80px;
+    font-family:'gabriola', serif;
+    font-weight:700;
+    letter-spacing:6px;
+    color:white;
+}
+
+.content p{
+    margin-top:20px;
+    font-size:22px;
+    color:white;
+    opacity:.9;
+}
+
+@keyframes fade{
+
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Звезды */
+
+.star{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{
+        opacity:.2;
+    }
+    to{
+        opacity:1;
+    }
+}
+.underwater{
+
+    position:relative;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(
+    to bottom,
+    #2b7fff,
+    #0d4f9d,
+    #04284f,
+    #021120);
+
+}
+.underwater::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+    height:80px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(8px);
+
+    animation:surface 5s ease-in-out infinite;
+
+}
+
+@keyframes surface{
+
+    0%{
+        clip-path:polygon(0 40%,15% 60%,30% 35%,50% 65%,70% 40%,100% 60%,100%0,0 0);
+    }
+
+    50%{
+        clip-path:polygon(0 60%,15% 35%,30% 60%,50% 35%,70% 60%,100% 40%,100%0,0 0);
+    }
+
+    100%{
+        clip-path:polygon(0 40%,15% 60%,30% 35%,50% 65%,70% 40%,100% 60%,100%0,0 0);
+    }
+
+}
+.about{
+
+    width:700px;
+
+    padding:45px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(10px);
+
+    color:white;
+
+    text-align:center;
+
+}
+
+.about h2{
+
+    font-size:45px;
+
+    margin-bottom:25px;
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+.about p{
+
+    line-height:1.8;
+
+    font-size:20px;
+
+}
+
+.about a {
+    color: white;
+    text-decoration: none;
+    transition: color .3s;
+}
+
+.about a:hover {
+    color: #ffd194;
+}
