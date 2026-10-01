@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunsets</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Круглая кнопка с выпадающим списком ссылок -->
+<div class="menu" id="menu">
+    <button class="menu-btn" id="menu-btn" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu-list">
+        <span></span><span></span><span></span>
+    </button>
+    <ul class="menu-list" id="menu-list">
+        <!-- Замени href на свои ссылки и подписи -->
+        <li><a href="https://github.com/YxzDidWhaaat" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="#" target="_blank" rel="noopener">Telegram</a></li>
+        <li><a href="#" target="_blank" rel="noopener">Contact</a></li>
+    </ul>
+</div>
+
+
+<section class="hero">
+
+    <div class="sun"></div>
+
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+
+    <div class="sea"></div>
+
+    <div id="stars"></div>
+
+    <div class="content">
+        <h1>Sunsets</h1>
+        <a class="scroll-down" href="#about" aria-label="Прокрутить вниз">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </div>
+
+</section>
+
+<section class="underwater" id="about">
+
+    <div class="about">
+
+        <h2>About me</h2>
+
+        <p>
+            Hello there, im <a href="https://github.com/YxzDidWhaaat" target="_blank" rel="noopener">Sunsets</a>, 17 y.o. developer from Moscow <br>
+Open for offers! 
+        </p>
+
+    </div>
+
+    <div class="gallery">
+
+        <h2>Gallery</h2>
+
+        <div class="grid">
+            <!-- Замени data-img на путь к своему фото и поправь заголовок/описание -->
+            <button class="card" data-img="photos/1.jpg" data-title="Photo 1" data-text="Описание первой фотографии.">
+            </button>
+            <button class="card" data-img="photos/2.jpg" data-title="Photo 2" data-text="Описание второй фотографии.">
+            </button>
+            <button class="card" data-img="photos/3.jpg" data-title="Photo 3" data-text="Описание третьей фотографии.">
+            </button>
+            <button class="card" data-img="photos/4.jpg" data-title="Photo 4" data-text="Описание четвёртой фотографии.">
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Всплывающее окно -->
+<div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" id="modal-close" aria-label="Закрыть">×</button>
+        <button class="modal-nav prev" id="modal-prev" aria-label="Предыдущее фото">‹</button>
+        <button class="modal-nav next" id="modal-next" aria-label="Следующее фото">›</button>
+        <div class="modal-img" id="modal-img"></div>
+        <h3 id="modal-title"></h3>
+        <p id="modal-text"></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
